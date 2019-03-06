@@ -7,6 +7,33 @@
 This is the [homebrew's][homebrew] tap for the **stable** versions of the [OSGeo][osgeo] geospatial toolset. Right now our main focus is to provide and up-to-date [QGIS][qgis] formulae easy to install to the end user. The tap includes formulae that may not be specifically
 from an OSGeo project, but do extend the toolset's functionality
 
+----
+
+<p align="center">
+  <a id="important-notice" class="anchor" href="#important-notice" aria-hidden="true">
+  <img width="300" src="https://i.imgur.com/GDz0TL1.png">
+	</a>
+</p>
+
+We are in the process of renaming some formulae so we avoid the problems of have duplicated packages in your Cellar with different names. At the end of this process it's recommended to uninstall and reinstall those formulae after pining the tap. 
+
+The formulae that will be affected is the following: 
+
+- sip-qt5 ➜ sip
+- pyqt-qt5 ➜ pyqt 
+- qscintilla2-qt5 ➜ qscintilla2
+- pyqt5-webkit ➜ pyqt-webkit
+- gdal2 ➜ gdal
+- postgis2 ➜ postgis
+- liblas-gdal2 ➜ liblas
+
+It's recomendable to run: 
+
+```shell 
+$ brew uninstall --ignore-dependencies sip sip-qt5 pyqt pyqt-qt5 qscintilla2 qscintilla2-qt5 pyqt5-webkit gdal gdal2 postgis postgis2 liblas liblas-gdal2
+$ brew tap-pin osgeo/osgeo4mac
+```
+
 ## How do I install these formulae?
 
 Just `brew tap osgeo/osgeo4mac` and then `brew install <formula>`.
